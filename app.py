@@ -3,7 +3,7 @@ import pandas as pd
 import os 
 import plotly.express as px
 
-csv_file_path = "1LM2.csv"
+csv_file_path = "https://github.com/nevermind78/PROJETY/raw/main/1LM2.csv"
 # Chargement du fichier CSV en nettoyant les espaces dans la colonne Email
 df = pd.read_csv(csv_file_path, delimiter=";", converters={"Email": lambda x: x.strip()})
 
