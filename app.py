@@ -3,7 +3,7 @@ import pandas as pd
 import os 
 import plotly.express as px
 
-csv_file_path = "https://github.com/nevermind78/PROJETY/raw/main/1LM2.csv"
+csv_file_path = "https://github.com/nevermind78/DATALM/raw/main/1LM.csv"
 # Chargement du fichier CSV en nettoyant les espaces dans la colonne Email
 df = pd.read_csv(csv_file_path, delimiter=";", converters={"Email": lambda x: x.strip()})
 
@@ -17,6 +17,8 @@ def categorize_notes(note):
         return "Insuffisant (<10)"
     elif 10 <= note < 12:
         return "Passable (10-12)"
+    elif 12<= note < 14:
+        return "Assez Bien(12-14)"
     elif 14 <= note < 16:
         return "Bien (14-16)"
     else:
