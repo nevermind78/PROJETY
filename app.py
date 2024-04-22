@@ -16,7 +16,7 @@ def get_table_names(conn):
     return [table[0] for table in tables]
 
 def Home():
-    st.title("SQLlite with Streamlit and Python")
+    st.title("SQLlite with Streamlit")
     # Select Database
     db_file_path = st.text_input("Enter Database File Path:")
     if db_file_path:
