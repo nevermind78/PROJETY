@@ -6,10 +6,10 @@ import plotly.express as px
 csv_file_path = "https://github.com/nevermind78/DATALM/raw/main/1LM.csv"
 # Chargement du fichier CSV en nettoyant les espaces dans la colonne Email
 df = pd.read_csv(csv_file_path, delimiter=";", converters={"Email": lambda x: x.strip()})
-
+df = df[df['GROUP']=='1LM2']
 # Titre de l'application
 st.title("NOTES DU DS PYTHON")
-st.header("1LM A.U 2023-2024")
+st.header("1LM2 A.U 2023-2024")
 # Champ de saisie pour l'email de l'étudiant
 email = st.text_input("Saisissez votre email")
 def categorize_notes(note):
@@ -23,6 +23,7 @@ def categorize_notes(note):
         return "Bien (14-16)"
     else:
         return "Très bien (>16)"
+
 df["Note"] = pd.to_numeric(df["Note"], errors='coerce').fillna(0)
 df["Catégorie de notes"] = df["Note"].apply(categorize_notes)
 # Vérification si l'email existe dans le fichier CSV
